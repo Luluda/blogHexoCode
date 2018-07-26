@@ -2,7 +2,7 @@
 title: TypeScript 与 flow
 date: 2017-05-30 15:18:16
 tags: [TypeScript, flow]
-categories: js
+categories: TypeScript&flow
 ---
 {% blockquote%}
 flow： 一个 JAVASCRIPT 静态类型检测器
