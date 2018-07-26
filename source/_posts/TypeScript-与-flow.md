@@ -2,7 +2,7 @@
 title: TypeScript 与 flow
 date: 2017-05-30 15:18:16
 tags: [TypeScript, flow]
-categories: 前端
+categories: js
 ---
 {% blockquote%}
 flow： 一个 JAVASCRIPT 静态类型检测器
@@ -34,7 +34,7 @@ vue中使用了flow，flow的适合场景可以参考尤大的回答[Vue 2.0 为
 
 ## 是否使用TypeScript/flow
 虽然TypeScript/flow都是基于js的，但他们的类型机制还是需要花费成本学习（类、接口），并非适用任何项目，这是Flow vs TypeScript推荐的参考标准，可以参照下
-![](../images/ts_flow.png)
+![](/images/ts_flow.png)
 
 参考文档：
 [Flow vs TypeScript](http://djcordhose.github.io/flow-vs-typescript/flow-typescript-2.html#/)
