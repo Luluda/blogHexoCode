@@ -50,7 +50,11 @@ window.window === self           // true
 ```javascript
 typeof self == 'object' && self.self === self && self
 ```
-在返回self前要判断typeof和self.self，这样写的原因是什么呢？个人认为这是为了一定程度保证此self即我们想要的全局对象。**self不是js的保留关键字**，chrome 67.0.3396.99版本实验，self可以被改写！虽然增加了两个条件并不能保证self就是全局作用域，算是加了层保障。另`|| this`也可以一定程度避免self被改写（但不符合typeof self == 'object' && self.self === self）情况下可以获取到全局作用域。
+在返回self前要判断typeof和self.self，这样写的原因是什么呢？个人认为这是为了一定程度保证此self即我们想要的全局对象。self、window、global很有意思，self.self.self.self.self === self 为true,还可以继续往下写， window和global同理。这个实现其实很简单：
+```javascript
+self.self = self
+```
+但**self不是js的保留关键字**，chrome 67.0.3396.99版本实验，self可以被改写！虽然增加了两个条件并不能保证self就是全局作用域，算是加了层保障。另`|| this`也可以一定程度避免self被改写（但不符合typeof self == 'object' && self.self === self）情况下可以获取到全局作用域。
 self不是js保留关键字，但为window保留关键字，所以要警惕以后变量名要避开各种保留关键字才不会出现诡异的问题。
 ### this
 上面说的修改self算是作死会出现的问题，增加了this最主要的原因应该是
